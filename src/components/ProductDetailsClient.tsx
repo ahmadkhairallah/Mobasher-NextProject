@@ -17,7 +17,7 @@ const ProductDetailsClient = ({ asin }: { asin: string }) => {
     rating,
   } = currentProduct || {};
 
-  if (!currentProduct) return <p>No product found.</p>;
+  if (!currentProduct) return <p className="text-center text-gray-600 mt-4">No product found.</p>;
 
   console.log(currentProduct);
 

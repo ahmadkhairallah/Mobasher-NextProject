@@ -46,6 +46,10 @@ MyStore is a modern, scalable, and responsive e-commerce web application built w
 
 Key Features & Functionality
 
+Caching Technique: Performance was enhanced by reducing redundant network requests and enabling faster resource loading in subsequent requests compared to the initial load. This ensures that frequently accessed data is retrieved from the cache, minimizing response time and improving the user experience.
+
+Note: Fetching products might experience some delay on the initial request. Due to time constraints, I couldn't fully optimize this aspect. It remains a point for future improvement.
+
 Categories Page
 API Integration: Fetches root categories using GET_ROOT_CATEGORIES GraphQL query.
 UI Components: Displays categories in a clean, responsive layout.

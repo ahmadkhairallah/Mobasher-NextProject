@@ -13,7 +13,7 @@ const ProductCard = ({ product }: { product: Product }) => {
   return (
     <div
       key={product.asin}
-      className="product-card p-4 border rounded-lg shadow-md hover:shadow-lg transition-shadow"
+      className="product-card p-4 border rounded-lg shadow-md hover:shadow-lg transition-shadow flex flex-col justify-between"
     >
       <Image
         src={mainImageUrl}
@@ -32,7 +32,7 @@ const ProductCard = ({ product }: { product: Product }) => {
 
       <Link
         href={nextPath}
-        className="inline-block px-4 py-2 bg-secondary text-primary font-medium rounded hover:bg-secondary/80 transition"
+        className="mt-auto text-center inline-block px-4 py-2 bg-secondary text-primary font-medium rounded hover:bg-secondary/80 transition"
       >
         View Details
       </Link>

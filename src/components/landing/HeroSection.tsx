@@ -7,7 +7,7 @@ interface HeroSectionProps {
   title: string;
   description: string;
   ctaText: string;
-  ctaLinkId: string;
+  ctaLinkId: string; // ID of the target section to scroll to
   backgroundImage: string;
 }
 
@@ -18,6 +18,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   ctaLinkId,
   backgroundImage,
 }) => {
+  // Scroll to the target section
+  const scrollToSection = () => {
+    const targetElement = document.getElementById(ctaLinkId); // Find the target section by ID
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <section
@@ -44,7 +51,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           {description}
         </p>
         <button
-          // onClick={scrollToSection}
+          onClick={scrollToSection} // Attach the scroll functionality to the button
           className="inline-block px-5 py-2 md:px-6 md:py-3 text-sm md:text-base lg:text-base bg-primary text-white font-medium rounded-md hover:bg-primaryAlt transition"
         >
           {ctaText}

@@ -26,8 +26,10 @@ export default async function SubcategoryProductsPage({
   searchParams: Record<string, string>;
 }>) {
 
+  const syncSearchParams = await searchParams;
+
    // Parse the current page number from the search parameters, defaulting to 1
-  const page = parseInt(searchParams["page"] || "1");
+  const page = parseInt(syncSearchParams["page"] || "1");
 
   // Await the promise to get the subcategory ID from the URL parameters
   const { subcategoryId } = await params;
@@ -82,7 +84,7 @@ export default async function SubcategoryProductsPage({
     .catch((error) => console.error(error));
 
   return (
-    <Suspense fallback={<div>Loading products...</div>}>
+    <Suspense fallback={<div className="text-lg font-semibold text-primary mb-4">Loading products...</div>}>
       <div className="p-4 bg-background min-h-screen">
         <header className="mb-8 text-center">
           <h1 className="text-3xl font-bold text-primary mb-2">Products</h1>

@@ -51,7 +51,7 @@ export default function SplashScreen() {
         exit={{ opacity: 0 }}
         transition={{ delay: 1, duration: 1 }}
       >
-        <p>Loading, please wait...</p>
+        <p className="text-lg font-semibold text-primary mb-4">Loading, please wait...</p>
       </motion.div>
     </div>
   );

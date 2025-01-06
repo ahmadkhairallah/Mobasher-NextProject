@@ -14,7 +14,7 @@ const SubCategoryItem = (props: Props) => {
     <div className="flex items-center justify-between bg-secondary p-4 rounded-md shadow hover:shadow-lg hover:bg-secondary/90 transition">
       <Link
         href={`./${categoryId}/${id}`}
-        className="flex items-center justify-between w-full"
+        className="flex items-center justify-between w-full hover:text-primary transition duration-300"
       >
         <span>{name}</span>
         <FiChevronRight size={20} />

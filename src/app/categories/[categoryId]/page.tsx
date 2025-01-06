@@ -13,7 +13,6 @@ export default async function CategoryProductsPage({
   params: Promise<{ categoryId: string }>;
 }>) {
   const { categoryId } = await params;
-
   const response: RootCategoriesQueryData = await fetch(
     process.env.NEXT_GRAPHQL_API_URL as string,
     {
@@ -48,7 +47,17 @@ export default async function CategoryProductsPage({
     .catch((error) => console.error(error));
 
   return (
-    <Suspense fallback={<div>Loading products...</div>}>
+    <Suspense
+    fallback={
+      <div className="flex items-center justify-center min-h-screen bg-background">
+        <div className="flex flex-col items-center">
+          {/* Animated Spinner */}
+          <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin mb-4"></div>
+          <p className="text-lg font-semibold text-primary mb-4">Loading products...</p>
+        </div>
+      </div>
+    }
+  >
     <div className="mb-8">
       <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary text-center mb-6">
         Products for Category: {response?.amazonProductCategory?.name}
