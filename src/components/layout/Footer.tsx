@@ -24,16 +24,6 @@ const Footer: React.FC = () => {
                   Categories
                 </Link>
               </li>
-              <li>
-                <Link href="/about" className="hover:underline">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:underline">
-                  Contact
-                </Link>
-              </li>
             </ul>
           </div>
 

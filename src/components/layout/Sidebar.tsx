@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { FiHome, FiGrid, FiMail, FiInfo } from "react-icons/fi";
+import { FiHome, FiGrid } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Sidebar: React.FC = () => {
@@ -50,22 +50,6 @@ const Sidebar: React.FC = () => {
                     className="flex items-center gap-2 text-textMedium hover:text-primary"
                   >
                     <FiGrid size={20} /> Categories
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/about"
-                    className="flex items-center gap-2 text-textMedium hover:text-primary"
-                  >
-                    <FiInfo size={20} /> About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact"
-                    className="flex items-center gap-2 text-textMedium hover:text-primary"
-                  >
-                    <FiMail size={20} /> Contact
                   </Link>
                 </li>
               </ul>

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { FiHome, FiGrid, FiInfo, FiMail } from "react-icons/fi";
+import { FiHome, FiGrid } from "react-icons/fi";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { motion } from "framer-motion";
 
@@ -30,20 +30,6 @@ const Header: React.FC = () => {
           >
             <FiGrid />
             <span>Categories</span>
-          </Link>
-          <Link
-            href="/about"
-            className="flex items-center space-x-2 hover:underline"
-          >
-            <FiInfo />
-            <span>About</span>
-          </Link>
-          <Link
-            href="/contact"
-            className="flex items-center space-x-2 hover:underline"
-          >
-            <FiMail />
-            <span>Contact</span>
           </Link>
         </nav>
 
@@ -84,26 +70,6 @@ const Header: React.FC = () => {
                 >
                   <FiGrid />
                   <span>Categories</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  className="flex items-center space-x-2 hover:underline"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <FiInfo />
-                  <span>About</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="flex items-center space-x-2 hover:underline"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <FiMail />
-                  <span>Contact</span>
                 </Link>
               </li>
             </ul>
