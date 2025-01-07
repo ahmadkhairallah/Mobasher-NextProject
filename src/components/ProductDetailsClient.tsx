@@ -24,7 +24,9 @@ const ProductDetailsClient = ({ asin }: { asin: string }) => {
   return (
     <div className="p-4 bg-white shadow-md rounded-md max-w-4xl mx-auto">
       <h1 className="text-3xl font-bold mb-4 text-primary">{title}</h1>
-      <p className="text-gray-700 mb-4">{bookDescription || "No description available."}</p>
+      <p className="text-gray-700 mb-4">
+        {bookDescription || "No description available."}
+      </p>
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Main Image */}
         {mainImageUrl && (
@@ -50,11 +52,13 @@ const ProductDetailsClient = ({ asin }: { asin: string }) => {
             Rating: <span className="font-bold">{rating || "N/A"}</span>
           </p>
           <ul className="list-disc list-inside text-gray-600 mt-4">
-            {featureBullets?.length > 0
-              ? featureBullets.map((bullet, index) => (
-                  <li key={index}>{bullet}</li>
-                ))
-              : "No features available."}
+            {Array.isArray(featureBullets) && featureBullets.length > 0 ? (
+              featureBullets.map((bullet, index) => (
+                <li key={index}>{bullet}</li>
+              ))
+            ) : (
+              <li>No features available.</li>
+            )}
           </ul>
         </div>
       </div>
