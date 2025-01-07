@@ -28,7 +28,7 @@ export default async function CategoriesPage() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        query: GET_ROOT_CATEGORIES, // GraphQL query to fetch root categories
+        query: GET_ROOT_CATEGORIES,
         variables: {
           input: {
             domain: "US",
@@ -39,7 +39,7 @@ export default async function CategoriesPage() {
   )
     .then((res) => res.json())
     .then((data) => data.data)
-    .catch((errror) => console.error(errror));
+    .catch((error) => console.error(error));
 
   return (
     <Suspense fallback={<div>Loading products...</div>}>
@@ -49,7 +49,7 @@ export default async function CategoriesPage() {
         description="Discover amazing categories and products tailored just for you."
         ctaText="Explore Categories"
         ctaLinkId="categories-section"
-        backgroundImage="/assets/hero-background.jpg" // Replace with actual path
+        backgroundImage=""
       />
 
       {/* Categories Section */}
